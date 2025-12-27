@@ -4,24 +4,115 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Happy New Year ❤️</title>
+
 <style>
-body{margin:0;font-family:Poppins,sans-serif;background:#fff;color:#444}
+body{
+  margin:0;
+  font-family:Poppins,sans-serif;
+  background:#fff;
+  color:#444;
+  animation:pageEnter 1.2s ease forwards;
+}
+
+/* 🌸 page open animation */
+@keyframes pageEnter{
+  from{opacity:0; transform:translateY(30px)}
+  to{opacity:1; transform:translateY(0)}
+}
+
 .container{max-width:1000px;margin:auto;padding:20px}
 h1{text-align:center;font-size:3rem;color:#ff4d88;margin:30px 0}
-.main-text{background:#fff;border-radius:20px;padding:25px;line-height:1.8;box-shadow:0 10px 30px rgba(255,77,136,.2)}
-.gallery{margin-top:50px;display:flex;flex-direction:column;gap:40px;background:#ffd6e8;padding:40px 20px;border-radius:30px}
+
+.main-text{
+  background:#fff;
+  border-radius:20px;
+  padding:25px;
+  line-height:1.8;
+  box-shadow:0 10px 30px rgba(255,77,136,.2)
+}
+
+.gallery{
+  margin-top:50px;
+  display:flex;
+  flex-direction:column;
+  gap:40px;
+  background:#ffd6e8;
+  padding:40px 20px;
+  border-radius:30px
+}
+
 .photo-box{display:flex;align-items:center;gap:25px}
 .photo-box.right{flex-direction:row-reverse}
-.photo-box video{width:260px;height:160px;object-fit:cover;border-radius:25px;border:6px solid #ff69b4}
+.photo-box video{
+  width:260px;
+  height:160px;
+  object-fit:cover;
+  border-radius:25px;
+  border:6px solid #ff69b4
+}
+
 .quote{font-size:1rem;line-height:1.6}
 footer{text-align:center;margin:40px 0;color:#ff4d88}
-@media(max-width:768px){.photo-box{flex-direction:column!important;text-align:center}.photo-box video{width:100%;height:220px}}
+
+/* ❤️ BUTTON */
+.love-btn{
+  position:relative;
+  display:inline-block;
+  margin:50px auto;
+  padding:18px 40px;
+  font-size:22px;
+  font-weight:600;
+  text-decoration:none;
+  color:white;
+  background:linear-gradient(45deg,#ff4d88,#ff85b3);
+  border-radius:50px;
+  box-shadow:0 0 25px rgba(255,77,136,.7);
+  animation:heartbeat 1.5s infinite, floaty 3s ease-in-out infinite;
+}
+
+.love-btn:hover{transform:scale(1.12)}
+
+@keyframes heartbeat{
+  0%{transform:scale(1)}
+  25%{transform:scale(1.08)}
+  50%{transform:scale(1)}
+  75%{transform:scale(1.08)}
+  100%{transform:scale(1)}
+}
+
+@keyframes floaty{
+  0%{transform:translateY(0)}
+  50%{transform:translateY(-12px)}
+  100%{transform:translateY(0)}
+}
+
+/* ✨ glitter trail */
+.glitter{
+  position:fixed;
+  pointer-events:none;
+  font-size:14px;
+  animation:glitterFade .8s linear forwards;
+}
+
+@keyframes glitterFade{
+  from{opacity:1; transform:scale(1)}
+  to{opacity:0; transform:scale(2)}
+}
+
+@media(max-width:768px){
+  .photo-box{flex-direction:column!important;text-align:center}
+  .photo-box video{width:100%;height:220px}
+}
 </style>
 </head>
+
 <body>
 
-<div id="overlay" style="position:fixed;top:0;left:0;width:100%;height:100%;background:#ffd6e8;display:flex;align-items:center;justify-content:center;z-index:9999;">
-<button onclick="startMusic()" style="padding:18px 30px;font-size:20px;border:none;border-radius:30px;background:#ff4d88;color:white;">💖 Tap to Start 💖</button>
+<!-- MUSIC OVERLAY -->
+<div id="overlay" style="position:fixed;inset:0;background:#ffd6e8;display:flex;align-items:center;justify-content:center;z-index:9999;">
+<button onclick="startMusic()" style="padding:18px 30px;font-size:20px;border:none;border-radius:30px;background:#ff4d88;color:white;">
+💖 Tap to Start 💖
+</button>
 </div>
 
 <audio id="bgm" loop>
@@ -29,38 +120,58 @@ footer{text-align:center;margin:40px 0;color:#ff4d88}
 </audio>
 
 <script>
-function startMusic(){document.getElementById('bgm').play();document.getElementById('overlay').style.display='none';}
+function startMusic(){
+  document.getElementById('bgm').play();
+  document.getElementById('overlay').style.display='none';
+}
 </script>
 
 <div class="container">
-<h1>✨ Happy New Year My Love keeeenooo✨</h1>
+<h1>✨ Happy New Year My Love keeeenooo ✨</h1>
 
 <div class="main-text">
-Naya saal meri zindagi ka sab se khoobsurat hissa hai kyun ke tum ho ❤️My love ❤️✨, as this beautiful New Year begins 🎆🎉, I just want to hold every second still and pour my heart out for you 💖🥹 because you are not just my girlfriend, you are my home 🏡❤️, my peace ☁️💫, my favorite thought in every sunrise 🌅 and my last prayer every night 🌙🤍; another year has ended ⏳, and with it came thousands of moments, smiles 😊, tears 😢, lessons 📖, memories 📸, fights 😔, silences 🤐, and love that only grew stronger 💪❤️, and through all of it, it was you 🌹—your voice 🎶, your laughter 😂, your care 🤗, your anger 😅, your sweetness 🍯, your stubbornness 🙈—everything about you that made my world brighter 🌈✨; I still remember how this year felt when it started 🗓️ and how uncertain everything seemed 🤍😶, but then you walked with me hand in hand 🤝❤️, teaching me what patience means 🫶, what loyalty feels like 🔐, what real love looks like 💞, and what it means to choose one person every single day 🌍❤️; there were times when I hurt you 😔💔, times when I failed to understand you 😞, times when my words weren’t right 🥀, but even then you stayed 🌸🤍, and that’s something I will forever be grateful for 🙏❤️; this New Year 🎊✨ I don’t wish for expensive gifts 🎁 or perfect days 🌤️, I only wish for us 💑—for more late-night talks 🌙💬, more silly fights 😜, more laughs till our stomachs hurt 😂💓, more memories we can look back on and smile 😊📸; I want to grow with you 🌱❤️, heal with you 🩹🤍, dream with you 💭✨, and build a future where your smile is my success 🏆😊; I promise that in this New Year 🥂🎆 I will try harder 💪, love deeper ❤️, listen better 👂🤍, and never take you for granted 🌹✨, because you are rare 💎, you are precious 🥰, and you are my forever if Allah wills 🤲❤️; may this year bring you happiness 🌸😊, confidence 💫🔥, peace 🕊️🤍, and all the love you truly deserve 💝✨, and may I always be one of the reasons behind your smile 😊❤️; no matter where life takes us 🌍⛅, no matter how tough days become 🌧️😔, I want you to remember that there is someone who loves you endlessly ♾️❤️, who chooses you in every lifetime 🔁💑, and who is grateful for you every single day 🙏🥹; thank you for being my love 💖, my strength 💪, my motivation 🚀, and my happiness 😊🌷; Happy New Year my beautiful soul 🎉🎆❤️, may this year be kinder to you 🤍✨, closer to our dreams 🌠, and filled with moments where we fall in love with each other all over again 💞🔥🥂💋
+Naya saal meri zindagi ka sab se khoobsurat hissa hai kyun ke tum ho ❤️...
 </div>
 
 <div class="gallery">
-<div class="photo-box left">
-<video src="VID_20251223_234640_169.mp4" autoplay loop muted></video>
-<div class="quote">My love ❤️✨, as this New Year begins 🎆🎉, I just want you to know how grateful 🙏 I am for you. You are my happiest thought 😊, my calm in chaos 🌙, and the most beautiful part 💖 of my every day. Starting another year with you feels like a true blessing 💫 </div>
+  <div class="photo-box left">
+    <video src="VID_20251223_234640_169.mp4" autoplay loop muted></video>
+    <div class="quote">My love ❤️✨...</div>
+  </div>
+
+  <div class="photo-box right">
+    <video src="VID_20251223_234541_540.mp4" autoplay loop muted></video>
+    <div class="quote">Tumhare sath har pal special hai ❤️...</div>
+  </div>
+
+  <div class="photo-box left">
+    <video src="VID_20251223_234535_826.mp4" autoplay loop muted></video>
+    <div class="quote">Naya saal, meri mohabbat sirf tum 💖...</div>
+  </div>
 </div>
 
-<div class="photo-box right">
-<video src="VID_20251223_234541_540.mp4" autoplay loop muted></video>
-<div class="quote">Tumhare sath har pal special hai ❤️This past year was special 💕 because of the moments we shared 🤗, the laughs 😂, the lessons 📖, and even the struggles that made us stronger 💪. Your love inspires me 🌹 to be better, dream bigger 🌈, and smile more than ever before 😍</div>
-</div>
-
-<div class="photo-box left">
-<video src="VID_20251223_234535_826.mp4" autoplay loop muted></video>
-<div class="quote">Naya saal, meri mohabbat sirf tum 💖May this New Year bring us closer 💑, fill our lives with love ❤️, success 🌟, and endless memories 📸. I promise to stand by you 🤍, support you 🙌, and love you even more 💞 with each passing day. Happy New Year, my heart 🥂🎇💕</div>
-</div>
-</div>
 <div style="text-align:center;">
   <a href="https://cobra546.github.io/Happy-new-year-bachaw/" target="_blank" class="love-btn">
     ❤️🥰 NEXT PAGE 🥰❤️
   </a>
 </div>
+
 <footer>Made with love for my love 💕😘</footer>
 </div>
+
+<!-- ✨ GLITTER TRAIL SCRIPT -->
+<script>
+const btn=document.querySelector('.love-btn');
+btn.addEventListener('mousemove',e=>{
+  let g=document.createElement('span');
+  g.className='glitter';
+  g.innerHTML='✨';
+  g.style.left=e.clientX+'px';
+  g.style.top=e.clientY+'px';
+  document.body.appendChild(g);
+  setTimeout(()=>g.remove(),800);
+});
+</script>
+
 </body>
 </html>
